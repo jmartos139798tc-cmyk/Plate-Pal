@@ -10,9 +10,9 @@
 >
     {{-- Sidebar --}}
     <x-slot:sidebar>
-        <a href="{{ route('client.dashboard') }}" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#1C1A17] hover:bg-[#FDF6EE] transition-colors text-sm font-medium">
+        <a href="{{ route('client.dashboard') }}" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#E8642A] hover:bg-[#FDF6EE] transition-colors text-sm font-medium">
             <div class="flex items-center gap-2.5">
-                <svg class="size-4 stroke-[#8A7F72]" fill="none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2.422-3.633a.75.75 0 00-.104-1.06A2.25 2.25 0 1010.5 19.5H3m14.228-14.228l1.768-1.768a2.25 2.25 0 113.182 3.182l-1.768 1.768m0 0l1.768 1.768a2.25 2.25 0 11-3.182 3.182l-1.768-1.768m0 0l1.768-1.768a2.25 2.25 0 003.182-3.182l-1.768 1.768M9 9h.008v.008H9V9z"/></svg>
+                <svg class="size-4 stroke-[#E8642A]" fill="none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 Dashboard
             </div>
         </a>
