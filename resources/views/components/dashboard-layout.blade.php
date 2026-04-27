@@ -25,7 +25,7 @@
                 <a href="{{ auth()->user()->role === 'caterer' ? route('caterer.dashboard') : (auth()->user()->role === 'admin' ? route('admin.dashboard') : route('client.dashboard')) }}" class="flex items-center gap-2">
                     <img src="/assets/PlatePal_logo.jpg" alt="PlatePal" class="size-8 rounded-lg object-cover">
                     <div class="flex flex-col">
-                        <span class="text-sm font-display tracking-tight text-brand-dark leading-none">PLATE<span class="text-[#f44e08] ">PAL</span></span>
+                        <span class="text-lg font-display tracking-tight text-brand-dark leading-none">PLATE<span class="text-[#f44e08] ">PAL</span></span>
                     </div>
                 </a>
 

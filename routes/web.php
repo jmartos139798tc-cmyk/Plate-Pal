@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientDashboardController;
+use App\Http\Controllers\CatererDetailController;
 use App\Http\Controllers\CatererProfileController;
 use App\Http\Controllers\CatererDashboardController;
 use App\Http\Controllers\AuthController;
@@ -28,11 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [ClientDashboardController::class, 'index'])->name('client.dashboard');
     Route::get('/browse-caterers', [ClientDashboardController::class, 'browse'])->name('client.browse');
-    Route::get('/caterer/dashboard', [CatererDashboardController::class, 'index'])->name('caterer.dashboard');
 
-    // Caterer profile
+    // Caterer routes
+    Route::get('/caterer/dashboard', [CatererDashboardController::class, 'index'])->name('caterer.dashboard');
     Route::get('/caterer/profile', [CatererProfileController::class, 'edit'])->name('caterer.profile');
     Route::post('/caterer/profile', [CatererProfileController::class, 'update'])->name('caterer.profile.update');
+
+    // Caterer detail
+    Route::get('/caterer/{id}', [CatererDetailController::class, 'show'])->name('caterer.detail');
 });
 
 // Admin routes (require auth + admin role)

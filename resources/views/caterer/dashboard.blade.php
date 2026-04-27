@@ -52,7 +52,7 @@
     <x-slot:sidebarFooter></x-slot:sidebarFooter>
 
     {{-- Stats --}}
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-5">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-5 drop-shadow-md">
         @foreach([
             ['path' => 'M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', 'value' => $totalBookings,              'label' => 'Total Bookings'],
             ['path' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',                                                'value' => $pendingBookings,             'label' => 'Pending Requests'],
@@ -72,7 +72,7 @@
     </div>
 
     {{-- Upcoming Bookings + Business Trends --}}
-    <div class="grid lg:grid-cols-2 gap-5 mb-5">
+    <div class="grid lg:grid-cols-2 gap-5 mb-5 drop-shadow-md">
 
         {{-- Upcoming Bookings --}}
         <div class="bg-white rounded-2xl p-[22px] border border-[#EDE4D8]">
@@ -147,7 +147,7 @@
     </div>
 
     {{-- Recent Messages --}}
-    <div class="bg-white rounded-2xl p-[22px] border border-[#EDE4D8] mb-5">
+    <div class="bg-white rounded-2xl p-[22px] border border-[#EDE4D8] mb-5 drop-shadow-md">
         <div class="flex items-center justify-between mb-4">
             <h3 class="text-base font-black text-[#1C1A17]">Recent Messages</h3>
             <a href="#" class="text-xs font-bold text-[#E8642A] hover:text-[#F07C42] transition-colors">View All</a>
@@ -177,7 +177,7 @@
     </div>
 
     {{-- Business Info --}}
-    <div class="bg-white rounded-2xl p-[22px] border border-[#EDE4D8] mb-5">
+    <div class="bg-white rounded-2xl p-[22px] border border-[#EDE4D8] mb-5 drop-shadow-md">
         <h3 class="text-base font-black text-[#1C1A17] mb-4">Business Information</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="p-4 bg-[#FDF6EE] rounded-xl">

@@ -1,17 +1,17 @@
 <x-layout title="Login – PlatePal">
-<div class="flex min-h-screen font-sans">
+<div class="flex min-h-screen font-sans flex-col lg:flex-row">
     {{-- Left side --}}
-    <div class="w-full lg:w-1/2 flex flex-col px-8 lg:px-20 py-10 bg-white">
+    <div class="w-full lg:w-1/2 flex flex-col px-4 sm:px-8 lg:px-20 py-6 sm:py-10 bg-white">
         {{-- Top bar --}}
-        <div class="flex items-center justify-between mb-16">
+        <div class="flex items-center justify-between mb-8 sm:mb-16">
             <a href="{{ route('home') }}" class="flex items-center gap-2">
-                <img src="/assets/PlatePal_logo.jpg" alt="PlatePal" class="w-10 h-10 rounded-xl object-cover">
-                <span class="text-xl font-bold tracking-tight">
+                <img src="/assets/PlatePal_logo.jpg" alt="PlatePal" class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg sm:rounded-xl object-cover">
+                <span class="text-lg sm:text-xl font-bold tracking-tight">
                     <span class="text-gray-900 font-display">PLATE</span><span class="text-[#f44e08] font-display">PAL</span>
                 </span>
             </a>
-            <a href="{{ route('home') }}" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors">
-                <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <a href="{{ route('home') }}" class="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors">
+                <svg class="size-3 sm:size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
                 </svg>
                 Back to Home
@@ -20,58 +20,58 @@
 
         {{-- Form --}}
         <div class="flex-1 flex flex-col justify-center max-w-md mx-auto w-full">
-            <h1 class="text-4xl font-bold text-gray-900 mb-2 text-center">Welcome Back, Client</h1>
-            <p class="text-gray-500 text-lg mb-10 text-center">Sign in to browse caterers and book your next event</p>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 sm:mb-2 text-center">Welcome Back, Client</h1>
+            <p class="text-gray-500 text-sm sm:text-base md:text-lg mb-6 sm:mb-10 text-center">Sign in to browse caterers and book your next event</p>
 
             @if($errors->any())
-                <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">
+                <div class="mb-4 sm:mb-6 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs sm:text-sm">
                     {{ $errors->first() }}
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}" class="space-y-6">
+            <form method="POST" action="{{ route('login') }}" class="space-y-4 sm:space-y-6">
                 @csrf
 
                 <div>
-                    <label class="block text-base font-semibold text-gray-900 mb-2">Email Address</label>
+                    <label class="block text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">Email Address</label>
                     <input type="email" name="email" value="{{ old('email') }}" required placeholder="you@example.com"
-                        class="w-full px-4 py-4 rounded-xl bg-gray-50 border {{ $errors->has('email') ? 'border-red-400' : 'border-gray-200' }} text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f44e08] transition-all">
+                        class="w-full px-3 sm:px-4 py-2.5 sm:py-4 rounded-lg sm:rounded-xl bg-gray-50 border {{ $errors->has('email') ? 'border-red-400' : 'border-gray-200' }} text-gray-900 placeholder:text-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#f44e08] transition-all">
                 </div>
 
                 <div>
-                    <label class="block text-base font-semibold text-gray-900 mb-2">Password</label>
+                    <label class="block text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">Password</label>
                     <div class="relative">
                         <input id="password" type="password" name="password" required placeholder="Enter your password"
-                            class="w-full px-4 py-4 rounded-xl bg-gray-50 border {{ $errors->has('password') ? 'border-red-400' : 'border-gray-200' }} text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f44e08] transition-all pr-12">
+                            class="w-full px-3 sm:px-4 py-2.5 sm:py-4 rounded-lg sm:rounded-xl bg-gray-50 border {{ $errors->has('password') ? 'border-red-400' : 'border-gray-200' }} text-gray-900 placeholder:text-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#f44e08] transition-all pr-10 sm:pr-12">
                         <button type="button" onclick="togglePassword('password', 'eye-login')"
-                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                            <svg id="eye-login" class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <svg id="eye-login" class="size-4 sm:size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                             </svg>
                         </button>
                     </div>
-                    <div class="flex justify-end mt-2">
-                        <a href="#" class="text-sm font-bold text-[#f44e08] hover:underline">Forgot password?</a>
+                    <div class="flex justify-end mt-1.5 sm:mt-2">
+                        <a href="#" class="text-xs sm:text-sm font-bold text-[#f44e08] hover:underline">Forgot password?</a>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full py-4 rounded-xl bg-[#f44e08] text-white text-lg font-bold hover:bg-[#d94406] transition-all shadow-md shadow-orange-200 mt-4">
+                <button type="submit" class="w-full py-2.5 sm:py-4 rounded-lg sm:rounded-xl bg-[#f44e08] text-white text-sm sm:text-lg font-bold hover:bg-[#d94406] transition-all shadow-md shadow-orange-200 mt-2 sm:mt-4">
                     Sign In
                 </button>
             </form>
 
-            <div class="relative my-10">
+            <div class="relative my-6 sm:my-10">
                 <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-200"></div></div>
-                <div class="relative flex justify-center text-sm"><span class="px-4 bg-white text-gray-400">or</span></div>
+                <div class="relative flex justify-center text-xs sm:text-sm"><span class="px-3 sm:px-4 bg-white text-gray-400">or</span></div>
             </div>
 
-            <div class="space-y-4 text-center">
-                <p class="text-gray-600 font-medium">
+            <div class="space-y-2 sm:space-y-4 text-center">
+                <p class="text-gray-600 font-medium text-xs sm:text-base">
                     Don't have an account?
                     <a href="{{ route('register') }}" class="text-[#f44e08] font-bold hover:underline ml-1">Sign up</a>
                 </p>
-                <p class="text-gray-600 font-medium">
+                <p class="text-gray-600 font-medium text-xs sm:text-base">
                     Are you a caterer?
                     <a href="{{ route('caterer.login') }}" class="text-[#f44e08] font-bold hover:underline ml-1">Sign in here</a>
                 </p>
@@ -80,21 +80,21 @@
     </div>
 
     {{-- Right side --}}
-    <div class="hidden lg:flex lg:w-1/2 bg-[#f44e08] flex-col justify-center px-20 text-white">
+    <div class="hidden lg:flex lg:w-1/2 bg-[#f44e08] flex-col justify-center px-8 lg:px-20 py-10 text-white">
         <div class="max-w-lg">
-            <h2 class="text-4xl font-bold leading-tight mb-6">Find Your Perfect Caterer</h2>
-            <p class="text-xl text-white/90 leading-relaxed mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold leading-tight mb-4 lg:mb-6">Find Your Perfect Caterer</h2>
+            <p class="text-base lg:text-xl text-white/90 leading-relaxed mb-8 lg:mb-12">
                 Access Tagum City's finest home-based caterers. Browse menus, check availability, and book with confidence.
             </p>
-            <ul class="space-y-6">
+            <ul class="space-y-4 lg:space-y-6">
                 @foreach(['Browse verified caterers in your barangay', 'View real-time availability and pricing', 'Message caterers directly to customize your menu'] as $benefit)
-                <li class="flex items-start gap-4">
-                    <div class="bg-white/20 rounded-full p-1 mt-1">
-                        <svg class="size-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <li class="flex items-start gap-3 lg:gap-4">
+                    <div class="bg-white/20 rounded-full p-1 mt-0.5 lg:mt-1 shrink-0">
+                        <svg class="size-3 lg:size-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
-                    <span class="text-xl font-medium">{{ $benefit }}</span>
+                    <span class="text-base lg:text-xl font-medium">{{ $benefit }}</span>
                 </li>
                 @endforeach
             </ul>

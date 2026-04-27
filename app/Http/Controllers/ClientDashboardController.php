@@ -78,6 +78,7 @@ class ClientDashboardController extends Controller
         $initials = strtoupper(substr($user->name, 0, 1) . (str_contains($user->name, ' ') ? substr($user->name, strpos($user->name, ' ') + 1, 1) : ''));
 
         $caterers = User::where('role', 'caterer')
+            ->where('approval_status', 'approved')
             ->where('is_active', true)
             ->orderByDesc('rating')
             ->paginate(12);

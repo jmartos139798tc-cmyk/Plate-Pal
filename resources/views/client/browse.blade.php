@@ -190,9 +190,9 @@
 
                             {{-- Actions --}}
                             <div class="flex gap-2">
-                                <button class="flex-1 px-3 py-2 rounded-lg border border-[#E8642A] text-[#E8642A] text-xs font-bold hover:bg-[#FDF6EE] transition-colors">
+                                <a href="{{ route('caterer.detail', $caterer->id) }}" class="flex-1 px-3 py-2 rounded-lg border border-[#E8642A] text-[#E8642A] text-xs font-bold hover:bg-[#FDF6EE] transition-colors text-center">
                                     View Details
-                                </button>
+                                </a>
                                 <button class="flex-1 px-3 py-2 rounded-lg bg-[#E8642A] text-white text-xs font-bold hover:bg-[#F07C42] transition-colors">
                                     Book
                                 </button>
